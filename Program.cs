@@ -14,7 +14,7 @@ namespace mergeSort
             Console.WriteLine("Hello World!");
 
             Stopwatch stopWatch = new Stopwatch();
-                stopWatch.Start();
+                
                 
                 List<int> unsorted = new List<int>();
                 List<int> sorted = new List<int>(); 
@@ -25,14 +25,17 @@ namespace mergeSort
                 for(int i= 0; i < tal; i++)
                     unsorted.Add(rnd.Next(1, tal));
 
+                stopWatch.Start();
+
                 sorted = MergeSort(unsorted);
 
+                stopWatch.Stop();
 
             foreach (int a in sorted){
                 Console.Write(a + " ");
             }
 
-            stopWatch.Stop();
+            
 
             Console.WriteLine();
             Console.WriteLine("Det tog " + stopWatch.ElapsedMilliseconds + " Millisekunder");
